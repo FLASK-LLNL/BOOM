@@ -199,7 +199,7 @@ def prepare_splits_qm9(
             counter = counter + 1
         print("Completed " + property_name)
     print("All properties processed!")
-    property_names = [filename.replace(".csv", "") for filename in property_file_array]
+    property_names = [osp.basename(filename).replace(".csv", "") for filename in property_file_array]
 
     with open(output_file, "w") as f:
         # get header for database
