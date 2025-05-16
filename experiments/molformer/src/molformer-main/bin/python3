@@ -1,0 +1,2 @@
+#!/bin/bash --posix
+exec //usr/tce/bin/tce-wrap -p python-llnl-symlinks-3.7.2 -v 1 -r 2.tce.bl6  /usr/tce/packages/python/python-3.7.2/bin/python3 "$@"

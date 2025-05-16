@@ -1,0 +1,1037 @@
+{
+  "@context": {
+    "@language": "en",
+    "@vocab": "https://schema.org/",
+    "citeAs": "cr:citeAs",
+    "column": "cr:column",
+    "conformsTo": "dct:conformsTo",
+    "cr": "http://mlcommons.org/croissant/",
+    "rai": "http://mlcommons.org/croissant/RAI/",
+    "data": {
+      "@id": "cr:data",
+      "@type": "@json"
+    },
+    "dataType": {
+      "@id": "cr:dataType",
+      "@type": "@vocab"
+    },
+    "dct": "http://purl.org/dc/terms/",
+    "examples": {
+      "@id": "cr:examples",
+      "@type": "@json"
+    },
+    "extract": "cr:extract",
+    "field": "cr:field",
+    "fileProperty": "cr:fileProperty",
+    "fileObject": "cr:fileObject",
+    "fileSet": "cr:fileSet",
+    "format": "cr:format",
+    "includes": "cr:includes",
+    "isLiveDataset": "cr:isLiveDataset",
+    "jsonPath": "cr:jsonPath",
+    "key": "cr:key",
+    "md5": "cr:md5",
+    "parentField": "cr:parentField",
+    "path": "cr:path",
+    "recordSet": "cr:recordSet",
+    "references": "cr:references",
+    "regex": "cr:regex",
+    "repeated": "cr:repeated",
+    "replace": "cr:replace",
+    "sc": "https://schema.org/",
+    "separator": "cr:separator",
+    "source": "cr:source",
+    "subField": "cr:subField",
+    "transform": "cr:transform"
+  },
+  "@type": "sc:Dataset",
+  "name": "Boom",
+  "conformsTo": "http://mlcommons.org/croissant/1.0",
+  "description": "BOOM is a benchmarking dataset for evaluating chemistry models on DFT datasets for out-of-distribution generalization.",
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "url": "",
+  "creator": {
+    "@type": "Organization",
+    "name": "Anonymous",
+    "url": ""
+  },
+  "datePublished": "2025-06-18",
+  "keywords": [
+    "AI4Science",
+    "Out-of-Distribution",
+    "Generalization",
+    "Benchmarking",
+    "Chemistry",
+    "Machine Learning",
+    "DFT",
+    "Molecules"
+  ],
+  "citeAs": "boom2025, author = \"Anonymous\", title = \"BOOM: Benchmarking Out-Of-distribution Molecular Property Predictions of Machine Learning Models\", journal = \"Submitted\", year = \"2025\" ",
+  "version": "1.0",
+  "distribution": [
+    {
+      "@type": "cr:FileObject",
+      "@id": "qm9_data_with_ood_splits_with_inchi",
+      "contentUrl": "boom/data/qm9_data_with_ood_splits_with_inchi.csv",
+      "encodingFormat": "text/csv",
+      "sha256": "ffbe7cf2fbfac51cc99073f71ff3a48636cf9454207f7de25aae841db2ecde1a"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "10k_data_with_ood_splits",
+      "contentUrl": "boom/data/10k_data_with_ood_splits.csv",
+      "encodingFormat": "text/csv",
+      "sha256": "80a74c4972d5f1a360eb2e89502f1fb9494870f452a94a5e18d5729932ee2f68"
+    }
+  ],
+  "recordSet": [
+    {
+      "@type": "cr:RecordSet",
+      "@id": "10k_splits",
+      "key": [
+        {
+          "@id": "10k/smiles"
+        }
+      ],
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "10k/smiles",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "10k_data_with_ood_splits"
+            },
+            "extract": {
+              "column": "smiles"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "10k/density",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "10k_data_with_ood_splits"
+            },
+            "extract": {
+              "column": "density"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "10k/hof",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "10k_data_with_ood_splits"
+            },
+            "extract": {
+              "column": "hof"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "10k/density_ood",
+          "dataType": "sc:Boolean",
+          "source": {
+            "fileObject": {
+              "@id": "10k_data_with_ood_splits"
+            },
+            "extract": {
+              "column": "density_ood"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "10k/density_train",
+          "dataType": "sc:Boolean",
+          "source": {
+            "fileObject": {
+              "@id": "10k_data_with_ood_splits"
+            },
+            "extract": {
+              "column": "density_train"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "10k/density_iid",
+          "dataType": "sc:Boolean",
+          "source": {
+            "fileObject": {
+              "@id": "10k_data_with_ood_splits"
+            },
+            "extract": {
+              "column": "density_iid"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "10k/hof_ood",
+          "dataType": "sc:Boolean",
+          "source": {
+            "fileObject": {
+              "@id": "10k_data_with_ood_splits"
+            },
+            "extract": {
+              "column": "hof_ood"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "10k/hof_train",
+          "dataType": "sc:Boolean",
+          "source": {
+            "fileObject": {
+              "@id": "10k_data_with_ood_splits"
+            },
+            "extract": {
+              "column": "hof_train"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "10k/hof_iid",
+          "dataType": "sc:Boolean",
+          "source": {
+            "fileObject": {
+              "@id": "10k_data_with_ood_splits"
+            },
+            "extract": {
+              "column": "hof_iid"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "@type": "cr:RecordSet",
+      "@id": "qm9_splits",
+      "key": [
+        {
+          "@id": "qm9/smiles"
+        },
+        {
+          "@id": "qm9/inchi"
+        }
+      ],
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "qm9/smiles",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "qm9_data_with_ood_splits_with_inchi"
+            },
+            "extract": {
+              "column": "smiles"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "qm9/qm9_alpha",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "qm9_data_with_ood_splits_with_inchi"
+            },
+            "extract": {
+              "column": "qm9_alpha"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "qm9/qm9_alpha_score",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "qm9_data_with_ood_splits_with_inchi"
+            },
+            "extract": {
+              "column": "qm9_alpha_score"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "qm9/qm9_alpha_ood",
+          "dataType": "sc:Boolean",
+          "source": {
+            "fileObject": {
+              "@id": "qm9_data_with_ood_splits_with_inchi"
+            },
+            "extract": {
+              "column": "qm9_alpha_ood"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "qm9/qm9_alpha_train",
+          "dataType": "sc:Boolean",
+          "source": {
+            "fileObject": {
+              "@id": "qm9_data_with_ood_splits_with_inchi"
+            },
+            "extract": {
+              "column": "qm9_alpha_train"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "qm9/qm9_alpha_id",
+          "dataType": "sc:Boolean",
+          "source": {
+            "fileObject": {
+              "@id": "qm9_data_with_ood_splits_with_inchi"
+            },
+            "extract": {
+              "column": "qm9_alpha_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "qm9/qm9_cv",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "qm9_data_with_ood_splits_with_inchi"
+            },
+            "extract": {
+              "column": "qm9_cv"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "qm9/qm9_cv_score",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "qm9_data_with_ood_splits_with_inchi"
+            },
+            "extract": {
+              "column": "qm9_cv_score"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "qm9/qm9_cv_ood",
+          "dataType": "sc:Boolean",
+          "source": {
+            "fileObject": {
+              "@id": "qm9_data_with_ood_splits_with_inchi"
+            },
+            "extract": {
+              "column": "qm9_cv_ood"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "qm9/qm9_cv_train",
+          "dataType": "sc:Boolean",
+          "source": {
+            "fileObject": {
+              "@id": "qm9_data_with_ood_splits_with_inchi"
+            },
+            "extract": {
+              "column": "qm9_cv_train"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "qm9/qm9_cv_id",
+          "dataType": "sc:Boolean",
+          "source": {
+            "fileObject": {
+              "@id": "qm9_data_with_ood_splits_with_inchi"
+            },
+            "extract": {
+              "column": "qm9_cv_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "qm9/qm9_g298",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "qm9_data_with_ood_splits_with_inchi"
+            },
+            "extract": {
+              "column": "qm9_g298"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "qm9/qm9_g298_score",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "qm9_data_with_ood_splits_with_inchi"
+            },
+            "extract": {
+              "column": "qm9_g298_score"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "qm9/qm9_g298_ood",
+          "dataType": "sc:Boolean",
+          "source": {
+            "fileObject": {
+              "@id": "qm9_data_with_ood_splits_with_inchi"
+            },
+            "extract": {
+              "column": "qm9_g298_ood"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "qm9/qm9_g298_train",
+          "dataType": "sc:Boolean",
+          "source": {
+            "fileObject": {
+              "@id": "qm9_data_with_ood_splits_with_inchi"
+            },
+            "extract": {
+              "column": "qm9_g298_train"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "qm9/qm9_g298_id",
+          "dataType": "sc:Boolean",
+          "source": {
+            "fileObject": {
+              "@id": "qm9_data_with_ood_splits_with_inchi"
+            },
+            "extract": {
+              "column": "qm9_g298_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "qm9/qm9_gap",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "qm9_data_with_ood_splits_with_inchi"
+            },
+            "extract": {
+              "column": "qm9_gap"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "qm9/qm9_gap_score",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "qm9_data_with_ood_splits_with_inchi"
+            },
+            "extract": {
+              "column": "qm9_gap_score"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "qm9/qm9_gap_ood",
+          "dataType": "sc:Boolean",
+          "source": {
+            "fileObject": {
+              "@id": "qm9_data_with_ood_splits_with_inchi"
+            },
+            "extract": {
+              "column": "qm9_gap_ood"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "qm9/qm9_gap_train",
+          "dataType": "sc:Boolean",
+          "source": {
+            "fileObject": {
+              "@id": "qm9_data_with_ood_splits_with_inchi"
+            },
+            "extract": {
+              "column": "qm9_gap_train"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "qm9/qm9_gap_id",
+          "dataType": "sc:Boolean",
+          "source": {
+            "fileObject": {
+              "@id": "qm9_data_with_ood_splits_with_inchi"
+            },
+            "extract": {
+              "column": "qm9_gap_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "qm9/qm9_h298",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "qm9_data_with_ood_splits_with_inchi"
+            },
+            "extract": {
+              "column": "qm9_h298"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "qm9/qm9_h298_score",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "qm9_data_with_ood_splits_with_inchi"
+            },
+            "extract": {
+              "column": "qm9_h298_score"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "qm9/qm9_h298_ood",
+          "dataType": "sc:Boolean",
+          "source": {
+            "fileObject": {
+              "@id": "qm9_data_with_ood_splits_with_inchi"
+            },
+            "extract": {
+              "column": "qm9_h298_ood"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "qm9/qm9_h298_train",
+          "dataType": "sc:Boolean",
+          "source": {
+            "fileObject": {
+              "@id": "qm9_data_with_ood_splits_with_inchi"
+            },
+            "extract": {
+              "column": "qm9_h298_train"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "qm9/qm9_h298_id",
+          "dataType": "sc:Boolean",
+          "source": {
+            "fileObject": {
+              "@id": "qm9_data_with_ood_splits_with_inchi"
+            },
+            "extract": {
+              "column": "qm9_h298_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "qm9/qm9_homo",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "qm9_data_with_ood_splits_with_inchi"
+            },
+            "extract": {
+              "column": "qm9_homo"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "qm9/qm9_homo_score",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "qm9_data_with_ood_splits_with_inchi"
+            },
+            "extract": {
+              "column": "qm9_homo_score"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "qm9/qm9_homo_ood",
+          "dataType": "sc:Boolean",
+          "source": {
+            "fileObject": {
+              "@id": "qm9_data_with_ood_splits_with_inchi"
+            },
+            "extract": {
+              "column": "qm9_homo_ood"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "qm9/qm9_homo_train",
+          "dataType": "sc:Boolean",
+          "source": {
+            "fileObject": {
+              "@id": "qm9_data_with_ood_splits_with_inchi"
+            },
+            "extract": {
+              "column": "qm9_homo_train"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "qm9/qm9_homo_id",
+          "dataType": "sc:Boolean",
+          "source": {
+            "fileObject": {
+              "@id": "qm9_data_with_ood_splits_with_inchi"
+            },
+            "extract": {
+              "column": "qm9_homo_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "qm9/qm9_lumo",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "qm9_data_with_ood_splits_with_inchi"
+            },
+            "extract": {
+              "column": "qm9_lumo"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "qm9/qm9_lumo_score",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "qm9_data_with_ood_splits_with_inchi"
+            },
+            "extract": {
+              "column": "qm9_lumo_score"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "qm9/qm9_lumo_ood",
+          "dataType": "sc:Boolean",
+          "source": {
+            "fileObject": {
+              "@id": "qm9_data_with_ood_splits_with_inchi"
+            },
+            "extract": {
+              "column": "qm9_lumo_ood"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "qm9/qm9_lumo_train",
+          "dataType": "sc:Boolean",
+          "source": {
+            "fileObject": {
+              "@id": "qm9_data_with_ood_splits_with_inchi"
+            },
+            "extract": {
+              "column": "qm9_lumo_train"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "qm9/qm9_lumo_id",
+          "dataType": "sc:Boolean",
+          "source": {
+            "fileObject": {
+              "@id": "qm9_data_with_ood_splits_with_inchi"
+            },
+            "extract": {
+              "column": "qm9_lumo_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "qm9/qm9_mu",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "qm9_data_with_ood_splits_with_inchi"
+            },
+            "extract": {
+              "column": "qm9_mu"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "qm9/qm9_mu_score",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "qm9_data_with_ood_splits_with_inchi"
+            },
+            "extract": {
+              "column": "qm9_mu_score"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "qm9/qm9_mu_ood",
+          "dataType": "sc:Boolean",
+          "source": {
+            "fileObject": {
+              "@id": "qm9_data_with_ood_splits_with_inchi"
+            },
+            "extract": {
+              "column": "qm9_mu_ood"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "qm9/qm9_mu_train",
+          "dataType": "sc:Boolean",
+          "source": {
+            "fileObject": {
+              "@id": "qm9_data_with_ood_splits_with_inchi"
+            },
+            "extract": {
+              "column": "qm9_mu_train"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "qm9/qm9_mu_id",
+          "dataType": "sc:Boolean",
+          "source": {
+            "fileObject": {
+              "@id": "qm9_data_with_ood_splits_with_inchi"
+            },
+            "extract": {
+              "column": "qm9_mu_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "qm9/qm9_r2",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "qm9_data_with_ood_splits_with_inchi"
+            },
+            "extract": {
+              "column": "qm9_r2"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "qm9/qm9_r2_score",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "qm9_data_with_ood_splits_with_inchi"
+            },
+            "extract": {
+              "column": "qm9_r2_score"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "qm9/qm9_r2_ood",
+          "dataType": "sc:Boolean",
+          "source": {
+            "fileObject": {
+              "@id": "qm9_data_with_ood_splits_with_inchi"
+            },
+            "extract": {
+              "column": "qm9_r2_ood"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "qm9/qm9_r2_train",
+          "dataType": "sc:Boolean",
+          "source": {
+            "fileObject": {
+              "@id": "qm9_data_with_ood_splits_with_inchi"
+            },
+            "extract": {
+              "column": "qm9_r2_train"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "qm9/qm9_r2_id",
+          "dataType": "sc:Boolean",
+          "source": {
+            "fileObject": {
+              "@id": "qm9_data_with_ood_splits_with_inchi"
+            },
+            "extract": {
+              "column": "qm9_r2_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "qm9/qm9_u0",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "qm9_data_with_ood_splits_with_inchi"
+            },
+            "extract": {
+              "column": "qm9_u0"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "qm9/qm9_u0_score",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "qm9_data_with_ood_splits_with_inchi"
+            },
+            "extract": {
+              "column": "qm9_u0_score"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "qm9/qm9_u0_ood",
+          "dataType": "sc:Boolean",
+          "source": {
+            "fileObject": {
+              "@id": "qm9_data_with_ood_splits_with_inchi"
+            },
+            "extract": {
+              "column": "qm9_u0_ood"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "qm9/qm9_u0_train",
+          "dataType": "sc:Boolean",
+          "source": {
+            "fileObject": {
+              "@id": "qm9_data_with_ood_splits_with_inchi"
+            },
+            "extract": {
+              "column": "qm9_u0_train"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "qm9/qm9_u0_id",
+          "dataType": "sc:Boolean",
+          "source": {
+            "fileObject": {
+              "@id": "qm9_data_with_ood_splits_with_inchi"
+            },
+            "extract": {
+              "column": "qm9_u0_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "qm9/qm9_u298",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "qm9_data_with_ood_splits_with_inchi"
+            },
+            "extract": {
+              "column": "qm9_u298"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "qm9/qm9_u298_score",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "qm9_data_with_ood_splits_with_inchi"
+            },
+            "extract": {
+              "column": "qm9_u298_score"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "qm9/qm9_u298_ood",
+          "dataType": "sc:Boolean",
+          "source": {
+            "fileObject": {
+              "@id": "qm9_data_with_ood_splits_with_inchi"
+            },
+            "extract": {
+              "column": "qm9_u298_ood"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "qm9/qm9_u298_train",
+          "dataType": "sc:Boolean",
+          "source": {
+            "fileObject": {
+              "@id": "qm9_data_with_ood_splits_with_inchi"
+            },
+            "extract": {
+              "column": "qm9_u298_train"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "qm9/qm9_u298_id",
+          "dataType": "sc:Boolean",
+          "source": {
+            "fileObject": {
+              "@id": "qm9_data_with_ood_splits_with_inchi"
+            },
+            "extract": {
+              "column": "qm9_u298_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "qm9/qm9_zpve",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "qm9_data_with_ood_splits_with_inchi"
+            },
+            "extract": {
+              "column": "qm9_zpve"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "qm9/qm9_zpve_score",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "qm9_data_with_ood_splits_with_inchi"
+            },
+            "extract": {
+              "column": "qm9_zpve_score"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "qm9/qm9_zpve_ood",
+          "dataType": "sc:Boolean",
+          "source": {
+            "fileObject": {
+              "@id": "qm9_data_with_ood_splits_with_inchi"
+            },
+            "extract": {
+              "column": "qm9_zpve_ood"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "qm9/qm9_zpve_train",
+          "dataType": "sc:Boolean",
+          "source": {
+            "fileObject": {
+              "@id": "qm9_data_with_ood_splits_with_inchi"
+            },
+            "extract": {
+              "column": "qm9_zpve_train"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "qm9/qm9_zpve_id",
+          "dataType": "sc:Boolean",
+          "source": {
+            "fileObject": {
+              "@id": "qm9_data_with_ood_splits_with_inchi"
+            },
+            "extract": {
+              "column": "qm9_zpve_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "qm9/inchi",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "qm9_data_with_ood_splits_with_inchi"
+            },
+            "extract": {
+              "column": "inchi"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

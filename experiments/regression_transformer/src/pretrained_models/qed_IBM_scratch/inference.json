@@ -1,0 +1,14 @@
+{
+	"property_token": "<qed>",
+	"example": "<qed>0.717|[C][C][=C][C][=C][C][Branch2_1][Ring1][Ring1][N][C][=C][C][Branch1_1][C][C][=N][C][=C][C][=C][C][=C][Ring1][O][Ring1][Branch1_2][=C][Ring2][Ring1][C]",
+	"property_ranges": {
+		"<qed>": [
+			0,
+			1
+		]
+	},
+	"max_span_length": 7,
+	"property_mask_length": {
+		"<qed>": 5
+	}
+}

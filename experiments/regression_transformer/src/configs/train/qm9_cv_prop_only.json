@@ -1,0 +1,9 @@
+{
+  "task": "proponly",
+  "alternate_tasks": false,
+  "property_tokens": [
+      "<qm9_cv>"
+  ],
+  "_num_tokens_to_mask": null,
+  "_mask_token_order": null
+}

@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools >= 61.0", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "boom"
+version = "0.0.0"
+
+dependencies =["numpy", "scikit-learn", "matplotlib", "seaborn", "rdkit"]
+readme = "README.md"
+requires-python = ">3.8"
+
+[project.optional-dependencies]
+viz = ["matplotlib", "seaborn"]
+
+[tool.setuptools]
+include-package-data = true
+zip-safe = false
+packages = ["boom"]
