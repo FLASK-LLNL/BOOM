@@ -1,3 +1,9 @@
+################################################################################
+## Copyright 2025 Lawrence Livermore National Security, LLC and other
+## FLASK Project Developers. See the top-level LICENSE file for details.
+##
+## SPDX-License-Identifier: Apache-2.0
+################################################################################
 from boom.data.load_processed_data import load_processed_data
 from boom.data.load_processed_3d_data import load_3D_data
 import os

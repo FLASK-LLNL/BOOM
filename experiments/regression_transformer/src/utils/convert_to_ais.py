@@ -1,3 +1,9 @@
+################################################################################
+## Copyright 2025 Lawrence Livermore National Security, LLC and other
+## FLASK Project Developers. See the top-level LICENSE file for details.
+##
+## SPDX-License-Identifier: Apache-2.0
+################################################################################
 import os
 from selfies import decoder as selfies_decoder
 from atomInSmiles import encode as ais_encoder

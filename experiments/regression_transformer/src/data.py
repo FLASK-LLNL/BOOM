@@ -1,3 +1,9 @@
+################################################################################
+## Copyright 2025 Lawrence Livermore National Security, LLC and other
+## FLASK Project Developers. See the top-level LICENSE file for details.
+##
+## SPDX-License-Identifier: Apache-2.0
+################################################################################
 from arguments import Arguments
 from torch.utils.data import Dataset, DataLoader
 from transformers import LineByLineTextDataset, PreTrainedTokenizer, TextDataset

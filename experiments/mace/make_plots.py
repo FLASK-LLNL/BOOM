@@ -1,3 +1,9 @@
+################################################################################
+## Copyright 2025 Lawrence Livermore National Security, LLC and other
+## FLASK Project Developers. See the top-level LICENSE file for details.
+##
+## SPDX-License-Identifier: Apache-2.0
+################################################################################
 from boom.viz.ParityPlot import OODParityPlot
 from ase.io import read
 from ase import Atoms

@@ -1,3 +1,9 @@
+################################################################################
+## Copyright 2025 Lawrence Livermore National Security, LLC and other
+## FLASK Project Developers. See the top-level LICENSE file for details.
+##
+## SPDX-License-Identifier: Apache-2.0
+################################################################################
 import os.path as osp
 import pickle
 from boom.data.prepare_3D_mols import generate_3D_dataset, retrieve_qm9_dataset

@@ -1,3 +1,9 @@
+################################################################################
+## Copyright 2025 Lawrence Livermore National Security, LLC and other
+## FLASK Project Developers. See the top-level LICENSE file for details.
+##
+## SPDX-License-Identifier: Apache-2.0
+################################################################################
 # Adapted from Regression Transformer's terminator.collators and collator_utils
 from dataclasses import dataclass
 from typing import Dict, Iterable, List, Optional, Tuple, Union
