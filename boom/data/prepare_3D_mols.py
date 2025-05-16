@@ -43,8 +43,10 @@ def conformer(smiles, max_attempts=10000):
         return None
 
 
-def generate_3D_dataset(cache_file_name="10K_CSD_MOL.pkl", split_file=None):
-    data = package_data_loader("10k_dft_data_with_ood_splits.csv", split_file)
+def generate_3D_dataset(cache_file_name, split_file):
+    # data = package_data_loader("10k_dft_data_with_ood_splits.csv", split_file)
+    with open(split_file, "r") as f:
+        data = f.read().splitlines()
     conformer_dic = {}
     for line in tqdm(data[1:]):
         values = line.strip().split(",")
@@ -58,7 +60,7 @@ def generate_3D_dataset(cache_file_name="10K_CSD_MOL.pkl", split_file=None):
     return conformer_dic
 
 
-def retrieve_qm9_dataset(cache_file_name):
+def retrieve_qm9_dataset(cache_file_name, split_file):
     datadir = join(os.getcwd(), "tmp")
     pickle_file = join(datadir, cache_file_name)
 
@@ -66,7 +68,10 @@ def retrieve_qm9_dataset(cache_file_name):
         with open(pickle_file, "rb") as f:
             return pickle.load(f)
 
-    smiles_data = package_data_loader("qm9_data_with_ood_splits_with_inchi.csv")
+    # smiles_data = package_data_loader("qm9_data_with_ood_splits_with_inchi.csv")
+
+    with open(split_file, "r") as f:
+        data = f.read().splitlines()
     smiles_list = [x.strip().split(",")[0] for x in smiles_data[1:]]
     smiles_list = [Chem.MolToSmiles(Chem.MolFromSmiles(x)) for x in smiles_list]
     # inchi_list = [Chem.MolToInchi(Chem.MolFromSmiles(x)) for x in smiles_list]

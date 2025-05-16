@@ -1,5 +1,6 @@
 from boom.data.load_processed_data import load_processed_data
 from boom.data.load_processed_3d_data import load_3D_data
+import os
 
 
 class CoordDataset:
@@ -34,6 +35,16 @@ class CoordDataset:
         self.split = split.lower()
         if split.lower() not in ["train", "ood", "id"]:
             raise ValueError("Split must be one of 'train', 'ood' or 'id'")
+
+        if split_file is None:
+
+            cur_dir = os.getcwd()
+            if property.lower() in ["density", "hof"]:
+                split_file = os.path.join(cur_dir, "10k_data_with_ood_splits.csv")
+            else:
+                split_file = os.path.join(
+                    cur_dir, "qm9_data_with_ood_splits_with_inchi.csv"
+                )
 
         self.data = load_3D_data(self.property, cached_file, split_file)
 

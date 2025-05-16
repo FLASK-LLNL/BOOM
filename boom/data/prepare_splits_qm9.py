@@ -128,7 +128,7 @@ def prepare_splits_qm9(
 
     print("Preparing splits for downloaded data...")
     for property_file in tqdm(property_file_array):
-        property_name = property_file.replace(".csv", "")
+        property_name = osp.basename(property_file).replace(".csv", "")
 
         random.seed(42)
         # Check if the qm9_alpha file exists
@@ -199,7 +199,7 @@ def prepare_splits_qm9(
             counter = counter + 1
         print("Completed " + property_name)
     print("All properties processed!")
-    property_names = [filename.replace(".csv", "") for filename in property_file_array]
+    property_names = [osp.basename(filename).replace(".csv", "") for filename in property_file_array]
 
     with open(output_file, "w") as f:
         # get header for database
