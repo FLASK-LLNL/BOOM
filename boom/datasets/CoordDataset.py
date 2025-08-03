@@ -51,12 +51,9 @@ class CoordDataset:
                 split_file = os.path.join(
                     cur_dir, "qm9_data_with_ood_splits_with_inchi.csv"
                 )
-
-        self.data = load_3D_data(self.property, cached_file, split_file)
-
-        self.dataset_type = f"{split.lower()}_{property.lower()}"
-
         data = load_processed_data(property, split_file)
+        self.data = load_3D_data(self.property, cached_file, split_file)
+        self.dataset_type = f"{split.lower()}_{property.lower()}"
 
         assert type(data) == dict
         assert type(self.data) == dict
