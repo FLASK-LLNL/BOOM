@@ -77,7 +77,7 @@ def retrieve_qm9_dataset(cache_file_name, split_file):
     # smiles_data = package_data_loader("qm9_data_with_ood_splits_with_inchi.csv")
 
     with open(split_file, "r") as f:
-        data = f.read().splitlines()
+        smiles_data = f.read().splitlines()
     smiles_list = [x.strip().split(",")[0] for x in smiles_data[1:]]
     smiles_list = [Chem.MolToSmiles(Chem.MolFromSmiles(x)) for x in smiles_list]
     # inchi_list = [Chem.MolToInchi(Chem.MolFromSmiles(x)) for x in smiles_list]

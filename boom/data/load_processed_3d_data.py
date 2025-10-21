@@ -30,6 +30,6 @@ def load_3D_data(property, cached_file, split_file=None):
             "u298",
             "zpve",
         ]:
-            return retrieve_qm9_dataset(cache_file_name=cached_file)
+            return retrieve_qm9_dataset(cache_file_name=cached_file, split_file=split_file)
         else:
             ValueError("Other 3D datasets currently not tested")
