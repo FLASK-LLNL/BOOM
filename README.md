@@ -16,6 +16,7 @@ The base requirements are:
 - Matplotlib
 - Seaborn
 - tqdm
+- requests
 
 
 ## From local source
@@ -29,13 +30,15 @@ pip install -e .
 The data should be already in the repo and should not be processed individually. 
 We set the random seed, but that may not guarantee the same results. So highly recommended to **not** run the data preparation code again. 
 
-If you still want to run the data preparation code, you can run the following command. 
+If you still want to run the data preparation code, you can run the following command for the 10k dataset. 
 ```python
-from boom.data import prepare_data
-
-prepare_data(density_file=<density_file_location>,
-             hof_file=<hof_file_location>,
-             output_dir=<output_dir>,)
+from boom.data.prepare_splits_10k import prepare_splits
+prepare_splits()
+```
+And for the QM9 datasets:
+```python
+from boom.data.prepare_splits_qm9 import prepare_splits_qm9
+prepare_splits_qm9()
 ```
 
 # Usage
@@ -44,7 +47,7 @@ prepare_data(density_file=<density_file_location>,
 The generic SMILES dataset class lets you load a particular property and split:
 
 ```python
-from boom.data.SMILESDataset import SMILESDataset
+from boom.datasets.SMILESDataset import SMILESDataset
 
 data = SMILESDataset(property=<property>, 
                      split=<split>)
@@ -115,8 +118,8 @@ from boom.datasets.SMILESDataset import (
 real_iid_data = OODDensityDataset()
 real_ood_data = OODHoFDataset()
 true_density_labels = {
-  'id': real_data.propety_values
-  'ood': real_ood_data.propety_values
+  'id': real_data.property_values
+  'ood': real_ood_data.property_values
 }
 
 predicted_iid_labels = model(real_iid_data.smiles)
